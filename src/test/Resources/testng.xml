@@ -1,0 +1,11 @@
+<!-- testng.xml -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MagentoTestSuite">
+    <test name="Login Tests">
+        <parameter name="url" value="https://magento.softwaretestingboard.com/" />
+        <classes>
+            <class name="com.magento.LoginTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+</suite>
