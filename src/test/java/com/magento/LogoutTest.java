@@ -37,8 +37,8 @@ public class LogoutTest {
         Assert.assertEquals(welcomeMessage, welcomeMessageArea.getText());
 
 
-        //7. Se selecteaza din heather meniul userului
-        System.out.println("Se selecteaza din heather meniul userului");
+        //7. Se selecteaza din header meniul userului
+        System.out.println("Se selecteaza din header meniul userului");
         WebElement userMenuButton = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span"));
         userMenuButton.click();
         sleep(3000);
@@ -49,6 +49,7 @@ public class LogoutTest {
         signOutButton.click();
         sleep(3000);
 
+       //10.Se verifica ca mesajul "You are signed out" este afisat
         WebElement succesMessage = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/h1/span"));
         String succesMessageContent = "You are signed out";
         Assert.assertTrue(succesMessage.getText().contains(succesMessageContent));

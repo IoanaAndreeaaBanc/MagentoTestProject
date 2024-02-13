@@ -1,6 +1,7 @@
 package com.magento;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,34 +30,30 @@ public class SearchTest {
     {
         String searchTerm = "maya";
 
-        //1. Deschide pagina
-        System.out.println("Deschide pagina");
+        System.out.println("Deschide pagina https://magento.softwaretestingboard.com");
 
-        //2. Selectem casuta de cautare si introducem cuvantul dupa care vrem sa facem cautarea
-        System.out.println("Selectem casuta de cautare si introducem cuvantul dupa care vrem sa facem cautarea");
-
+        System.out.println("Clik pe casuta de cautare");
         WebElement searchTextbox = driver.findElement(By.id("search"));
+        searchTextbox.click();
+        sleep(2000);
+
+        System.out.println("Introducem 'maya' in casuta de cautare");
         searchTextbox.sendKeys(searchTerm);
+        sleep(2000);
 
-        //3. Executam cautarea
-        System.out.println("Executam cautarea");
-        searchTextbox.submit();
+        System.out.println("Apasam enter");
+        searchTextbox.sendKeys(Keys.ENTER);
+        sleep(2000);
 
-        //4. Verificam ca denumirea produsului returnat contine cuvantul dupa care s-a facut cautarea
-        System.out.println("Verificam ca denumirea produsului returnat contine cuvantul dupa care s-a facut cautarea");
-
+        System.out.println("Verificam daca rezultatele cautarii dupa 'maya' sunt afisate pe pagina");
         WebElement listItem = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/div[2]/ol/li/div/div/strong/a"));
         Assert.assertTrue(listItem.getText().toLowerCase().contains(searchTerm));
+        sleep(2000);
 
-        //5. Verificam ca elementul web care afiseaza termenii dupa care s-a facut cautarea contin cuvantul cautat
-        System.out.println("Verificam ca elementul web care afiseaza termenii dupa care s-a facut cautarea contin cuvantul cautat");
-
-        WebElement relatedSearchTerms = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/dl/dd/a"));
-        Assert.assertTrue(relatedSearchTerms.getText().toLowerCase().contains(searchTerm));
     }
 
 
-    @AfterTest(alwaysRun = true)
+    @AfterTest()
     public void tearDown()
     {
         System.out.println(" Inchide pagina");

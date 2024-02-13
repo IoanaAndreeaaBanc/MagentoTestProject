@@ -26,6 +26,7 @@ public class CartTest {
     public void cartTest(){
         // 1. Deschidem pagina principa
         System.out.println("Deschide pagina principala");
+        sleep(2000);
 
         //2. Se selecteaza primul produs din lista
         System.out.println("Se selecteaza primul produs din lista");
@@ -39,12 +40,15 @@ public class CartTest {
 
         WebElement sizeButton = driver.findElement(By.id("option-label-size-143-item-168"));
         sizeButton.click();
+        sleep(3000);
+
 
         //4. Se selecteaza culoarea dorita
         System.out.println("Se selecteaza culoarea dorita");
 
         WebElement colorButton = driver.findElement(By.id("option-label-color-93-item-50"));
         colorButton.click();
+        sleep(2000);
 
         //5. Se selecteaza cantitatea dorita
         System.out.println("Se selecteaza cantitatea dorita");
@@ -53,13 +57,14 @@ public class CartTest {
         quantityTextBox.clear();
         String quantity = "2";
         quantityTextBox.sendKeys(quantity);
+        sleep(3000);
 
         //6. Se selecteaza butonul Add to cart
         System.out.println("Se selecteaza butonul Add to cart");
 
         WebElement addToCartButton  = driver.findElement(By.id("product-addtocart-button"));
         addToCartButton.click();
-        sleep(2000);
+        sleep(4000);
 
         //7. Se verifica continutul cosului de cumoaraturi
         System.out.println("Verifica continutul cosului de cumaparaturi");
@@ -80,7 +85,7 @@ public class CartTest {
         //Inchide pagina
 
         System.out.println(" Inchide pagina");
-        driver.close();
+       // driver.close();
     }
 
     public static void sleep(int miliseconds) {
