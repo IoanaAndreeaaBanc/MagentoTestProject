@@ -51,8 +51,7 @@ public class SearchTest {
 
     }
 
-
-    @AfterTest()
+    @AfterTest
     public void tearDown()
     {
         System.out.println(" Inchide pagina");
@@ -67,5 +66,4 @@ public class SearchTest {
             throw new RuntimeException(exception);
         }
     }
-
 }

@@ -56,7 +56,6 @@ public class LoginTest {
 
 
 
-
         Helper.login(username,invalidPassword,driver);
 
         System.out.println("Verifica ca apare mesajul de eroare ");
@@ -93,7 +92,6 @@ public class LoginTest {
 //        sleep(2000);
 
 
-
         Helper.login(username,password,driver);
 
 
@@ -113,7 +111,6 @@ public class LoginTest {
     }
 
     public static void sleep(int miliseconds) {
-
         try {
             Thread.sleep((miliseconds));
         } catch (InterruptedException exception) {

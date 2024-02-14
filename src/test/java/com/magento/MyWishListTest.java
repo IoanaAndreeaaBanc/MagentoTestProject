@@ -52,18 +52,17 @@ public class MyWishListTest {
             WebElement firstListItemName = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[2]/div/div[2]/div[1]/h1/span"));
             String itemName = firstListItemName.getText();
 
-            System.out.println("Click pe butonul add to wish list");
+            System.out.println("Click pe butonul Add to wish list");
             WebElement addToWishListButton = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[2]/div/div[2]/div[5]/div/a[1]"));
             addToWishListButton.click();
             sleep(3000);
-
 
             System.out.println("Se verifica, ca elementul selectat este adaugat la WishList");
             WebElement wishListItem = driver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div[1]/form/div[1]/ol/li/div/strong/a"));
             Assert.assertEquals(itemName, wishListItem.getText());
         }
 
-        @AfterTest()
+        @AfterTest
         public void tearDown(){
 
             System.out.println(" Inchide pagina");

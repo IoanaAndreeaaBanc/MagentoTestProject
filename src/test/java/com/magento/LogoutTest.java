@@ -48,9 +48,8 @@ public class LogoutTest {
         Assert.assertEquals(successMessage.getText(),successMessageContent);
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterTest
     public void tearDown(){
-        //Inchide pagina
 
         System.out.println(" Inchide pagina");
         driver.close();
@@ -64,6 +63,4 @@ public class LogoutTest {
             throw new RuntimeException(exception);
         }
     }
-
-
 }
