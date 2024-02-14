@@ -10,7 +10,6 @@ public class Helper {
     {
 
         System.out.println("Deschide pagina https://magento.softwaretestingboard.com/");
-        System.out.println("Asteapta 2 secunde");
         sleep(2000);
 
 

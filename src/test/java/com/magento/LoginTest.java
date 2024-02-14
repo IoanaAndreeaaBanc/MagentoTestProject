@@ -70,7 +70,6 @@ public class LoginTest {
     public void validLogin() {
 
 //        System.out.println("Deschide pagina https://magento.softwaretestingboard.com/");
-//        System.out.println("Asteapta 2 secunde");
 //        sleep(2000);
 //
 //        System.out.println("Click pe Sign In din header");
