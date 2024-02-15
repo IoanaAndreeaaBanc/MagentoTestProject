@@ -39,13 +39,14 @@ public class MyWishListTest {
             System.out.println("Click pe optiunea Sale din bara de navigare");
             WebElement saleButton = driver.findElement(By.id("ui-id-8"));
             saleButton.click();
+            sleep(3000);
 
             System.out.println("Click pe optiunea Jackets din meniul WOMEN'S DEALS");
             WebElement jacketsButton = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[4]/div[2]/div/div/ul[1]/li[2]/a"));
             jacketsButton.click();
+            sleep(3000);
 
             System.out.println("Click pe primul produs din lista");
-
             WebElement firstListItem = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[4]/ol/li[1]/div/a/span/span/img"));
             firstListItem.click();
             sleep(3000);
